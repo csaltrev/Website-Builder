@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/wrench.png">
+</head>
+
+<body>
+    <header>
+        <form name="settings">
+            <label for="title">Website Name: </label>
+            <input type="text" name="title" placeholder="Get creative" maxlength="20" required autofocus id="title" />
+            <label for="background">Background Color: </label>
+            <select name="background" id="background">
+                <option name="red" value="#F44336">Red</option>
+                <option name="blue" value="#448AFF">Blue</option>
+                <option name="green" value="#4CAF50">Green</option>
+                <option name="orange" value="#FF9800">Orange</option>
+                <option name="purple" value="#9C27B0">Purple</option>
+            </select>
+            <label for="cards">Card Color: </label>
+            <select name="cards" id="cards">
+                <option name="white" value="#F5F5F5">White</option>
+                <option name="black" value="#212121">Black</option>
+                <option name="gray" value="#616161">Gray</option>
+            </select>
+            <label for="news">News Feed: </label>
+            <select name="news" id="news">
+                <option name="nytimes" value="nytimes">The New York Times</option>
+                <option name="theguardian" value="theguardian">The Guardian</option>
+                <option name="engadget" value="engadget">Tech News</option>
+            </select>
+            <label for="fonts">Font Family: </label>
+            <select name="fonts" id="fonts">
+                <option name="open_sans" value="open-sans">Open Sans</option>
+                <option name="roboto" value="roboto">Roboto</option>
+                <option name="slabo" value="slabo">Slabo</option>
+                <option name="lato" value="lato">Lato</option>
+                <option name="montserrat" value="montserrat">Montserrat</option>
+                <option name="source_sans_pro" value="source-sans-pro">Source Sans Pro</option>
+            </select>
+            <button type="submit">Save</button>
+        </form>
+    </header>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
