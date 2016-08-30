@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.gray { background-color: #616161; }
+.black { background-color: #212121; }
+.white { background-color: #F5F5F5; }
+
+.cards {
+    max-width: 60vw;
+    margin: auto;
+}
+
+.card {
+	padding: 20px;
+	margin: 15px 0;
+	border-radius: 3px;
+}
+
+.card .card-header {
+	font-size: 1.8em;
+}
+
+.card .card-body {
+	margin: 15px;
+	font-size: 0.9em;
+}
+
+.card .card-link {
+	display: block;
+	text-align: right;
+	font-size: 0.8em;
+	text-decoration: none;
+}
