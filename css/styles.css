@@ -8,9 +8,17 @@ html {
     font-family: sans-serif;
 }
 
-.gray { background-color: #616161; }
-.black { background-color: #212121; }
-.white { background-color: #F5F5F5; }
+.gray { 
+	background-color: #616161; 
+	color: #212121;
+}
+.black { 
+	background-color: #212121;
+	color: #F5F5F5; 
+}
+.white { 
+	background-color: #F5F5F5; 
+}
 
 .cards {
     max-width: 60vw;
@@ -23,18 +31,11 @@ html {
 	border-radius: 3px;
 }
 
-.card .card-header {
-	font-size: 1.8em;
-}
-
 .card .card-body {
 	margin: 15px;
-	font-size: 0.9em;
 }
 
 .card .card-link {
-	display: block;
-	text-align: right;
-	font-size: 0.8em;
 	text-decoration: none;
+	color: #4CAF50;
 }
