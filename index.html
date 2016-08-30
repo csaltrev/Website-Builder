@@ -12,8 +12,6 @@
 <body>
     <header>
         <form name="settings">
-            <label for="title">Website Name: </label>
-            <input type="text" name="title" placeholder="Get creative" maxlength="20" required autofocus id="title" />
             <label for="background">Background Color: </label>
             <select name="background" id="background">
                 <option name="red" value="#F44336">Red</option>
@@ -24,9 +22,9 @@
             </select>
             <label for="cards">Card Color: </label>
             <select name="cards" id="cards">
-                <option name="white" value="#F5F5F5">White</option>
-                <option name="black" value="#212121">Black</option>
-                <option name="gray" value="#616161">Gray</option>
+                <option name="white" value="white">White</option>
+                <option name="black" value="black">Black</option>
+                <option name="gray" value="gray">Gray</option>
             </select>
             <label for="news">News Feed: </label>
             <select name="news" id="news">
@@ -47,8 +45,9 @@
         </form>
     </header>
     <hr>
-    <h1 class="site-name"></h1>
-    <main class="cards"></main>
+    <main>
+        <section class="cards"></section>
+    </main>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
