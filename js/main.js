@@ -1,7 +1,6 @@
 window.addEventListener('load', () => {
     const form = document.querySelector('form');
     const body = document.querySelector('body');
-    const cardsContainer = document.querySelector('.cards');
 
     function setBackground() {
         const background = document.querySelector('#background');
@@ -21,12 +20,30 @@ window.addEventListener('load', () => {
             url: url,
             method: 'GET',
             success(data) {
+                const cardsContainer = document.querySelector('.cards');
                 $.each(data.response.docs, (index, article) => {
-                    cardsContainer.innerHTML += `<article class="card ${getCardColor()}">
-                					       <h2 class="card-header">${article.headline.main}<h2>
-                					       <p class="card-body">${article.lead_paragraph}</p>
-                					       <a class="card-link" href="${article.web_url}">Full Article</a>
-                					   </article>`;
+                    const articleEl = document.createElement('article');
+                    articleEl.classList.add('card', getCardColor());
+
+                    const h2El = document.createElement('h2');
+                    h2El.classList.add('card-header');
+                    h2El.textContent = article.headline.main;
+
+                    const paraEl = document.createElement('p');
+                    paraEl.classList.add('card-body');
+                    paraEl.textContent = article.lead_paragraph;
+
+                    const anchorEl = document.createElement('a');
+                    anchorEl.classList.add('card-link');
+                    anchorEl.setAttribute('href', article.web_url);
+                    anchorEl.textContent = 'Full Article';
+                    anchorEl.style.color = body.style.backgroundColor;
+
+                    articleEl.appendChild(h2El);
+                    articleEl.appendChild(paraEl);
+                    articleEl.appendChild(anchorEl);
+
+                    cardsContainer.prepend(articleEl);
                 });
             },
             error(jqXHR, textStatus, err) {
