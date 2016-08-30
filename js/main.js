@@ -1,14 +1,7 @@
 window.addEventListener('load', () => {
     const form = document.querySelector('form');
     const body = document.querySelector('body');
-    const siteName = document.querySelector('.site-name');
-
-    function setSiteName() {
-        const siteNameInput = document.querySelector('#title');
-        siteName.textContent = siteNameInput.value;
-        siteNameInput.value = '';
-        siteNameInput.focus();
-    }
+    const cardsContainer = document.querySelector('.cards');
 
     function setBackground() {
         const background = document.querySelector('#background');
@@ -16,13 +9,10 @@ window.addEventListener('load', () => {
         body.style.backgroundColor = selectedBackground;
     }
 
-    function setCardColor() {
+    function getCardColor() {
         const cardColor = document.querySelector('#cards');
         const selectedCardColor = cardColor.options[cardColor.selectedIndex].value;
-        const cards = document.querySelectorAll('.card');
-        for (let card of cards) {
-            card.style.backgroundColor = selectedCardColor;
-        }
+        return selectedCardColor;
     }
 
     function fetchNYT() {
@@ -31,7 +21,13 @@ window.addEventListener('load', () => {
             url: url,
             method: 'GET',
             success(data) {
-                console.log(data.response.docs);
+                $.each(data.response.docs, (index, article) => {
+                    cardsContainer.innerHTML += `<article class="card ${getCardColor()}">
+                					       <h2 class="card-header">${article.headline.main}<h2>
+                					       <p class="card-body">${article.lead_paragraph}</p>
+                					       <a class="card-link" href="${article.web_url}">Full Article</a>
+                					   </article>`;
+                });
             },
             error(jqXHR, textStatus, err) {
                 alert(`Unable to fetch from The New York Times: ${err}`);
@@ -41,11 +37,7 @@ window.addEventListener('load', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        setSiteName();
         setBackground();
-        setCardColor();
-        
         fetchNYT();
     });
 });
