@@ -20,22 +20,22 @@
                 <option name="orange" value="#FF9800">Orange</option>
                 <option name="purple" value="#9C27B0">Purple</option>
             </select>
+            
             <label for="cards">Card Color: </label>
             <select name="cards" id="cards">
                 <option name="white" value="white">White</option>
                 <option name="black" value="black">Black</option>
                 <option name="gray" value="gray">Gray</option>
             </select>
-            <label for="news">News Feed: </label>
-            <select name="news" id="news">
-                <option name="nytimes" value="nytimes">The New York Times</option>
-                <option name="theguardian" value="theguardian">The Guardian</option>
-                <option name="engadget" value="engadget">Tech News</option>
-            </select>
+
+            <label for="nytimes">The New York Times</label>
+            <input type="checkbox" name="news" id="nytimes" value="The New York Times">
+            <label for="guardian">The Guardian</label>
+            <input type="checkbox" name="news" id="guardian" value="The Guardian">
+
             <button type="submit">Save</button>
         </form>
     </header>
-    <hr>
     <main>
         <section class="cards"></section>
     </main>
